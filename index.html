@@ -1,82 +1,165 @@
-<!doctype html>
+<!DOCTYPE html>
+<html lang="id">
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <script src="http://code.jquery.com/jquery-1.7.1.min.js" type="text/javascript"></script>  
-  <title>Happy Valentine's Day Max!</title>
-<link rel="icon" type="image/jpg" href="favicon.jpg">
-<style>
-/* HELLO MAX! THIS IS MY CSS! */
-body {
-	background-image: url('tandem_grey.png');
-}
-body::before {
-	content: url('tandem_grey.png') url('broken.png') url('clock.png') url('colors.png')  url('theCertificate.png') url('thePerks.png');
-	display: none;
-}
-.certificate {
-	background: #fff;
-	background-image: url('theCertificate.png');
-	box-shadow: 0 0 5px #888;
-}
-.benefits {
-	background: #fff;
-	background-image: url('thePerks.png');
-	box-shadow: 0 0 5px #888;
-}
-.no {
-	background-image: url('broken.png');
-}
-.yes {
-	background-image: url('colors.png');
-}
-.maybe {
-	background-image: url('clock.png');
-}
-#image {
-	height: 517px;
-	width: 780px;
-	margin: 50px auto;
-}
-</style>
-  
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hadiah Valentine Khusus untuk [Reva sayangg]</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif; /* Tipografi modern, nyaman */
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to bottom, #f8e8e8, #ffe4e1); /* Krem dan pink pastel */
+            color: #8b4513; /* Merah marun */
+            overflow-x: hidden;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .section {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 1s ease;
+        }
+        .section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        h1, h2 {
+            font-weight: 300;
+            margin-bottom: 20px;
+        }
+        p {
+            font-size: 18px;
+            line-height: 1.6;
+            max-width: 600px;
+        }
+        .heart {
+            font-size: 50px;
+            color: #ff69b4; /* Pink pastel */
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+        .button {
+            background: #8b4513;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background 0.3s;
+        }
+        .button:hover {
+            background: #a0522d;
+        }
+        .hidden {
+            display: none;
+        }
+        .surprise {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+        }
+        .memory {
+            margin: 20px 0;
+            padding: 15px;
+            background: #fff5f5;
+            border-radius: 10px;
+            transition: transform 0.3s;
+        }
+        .memory:hover {
+            transform: scale(1.05);
+        }
+        .illustration {
+            width: 100px;
+            height: 100px;
+            background: url('https://web.whatsapp.com/56b37834-0b41-4bcc-a697-306057cceb19') no-repeat center;
+            background-size: cover;
+            margin: 20px;
+        }
+    </style>
 </head>
 <body>
-	<script type="text/javascript">
-/* ZOMG. FUNCTION! */
-/* I ALSO LEARNED HOW TO DO A LOT OF THIS BY CHANGING .CSS INSTEAD OF ADDING/REMOVING CLASSES, WHICH I LEARNED IS BETTER. I ALSO LEARNED THAT I SHOULD MAKE VARS FOR BODY AND IMAGE SINCE I'M USING THEM MORE THAN ONCE! */
-	var beardedBoo = function() {
-		var body = $('body'),
-		    image = $("#image");
-		body.removeClass("no").removeClass("maybe")
-		image.removeClass("benefits").removeClass("certificate")
-		var answer = prompt("Will you be my valentine? Yes, No, Maybe?").toLowerCase()
-/* .toLowerCase IS BEST PRACTICE! IT'S ALSO OK IF YOU TYPE THE FIRST LETTER INSTEAD OF THE WORD! */
-		if (answer == "yes" || answer == 'y') {
-			body.addClass("yes")
-			image.addClass("certificate")
-		} else if (answer == "maybe" || answer == 'm') {
-			body.addClass("maybe")
-/* I WANTED THE BG TO CHANGE BEFORE THE ALERT AND THE IMAGE AFTER THE PROMPT AND THE NEXT PROMPT AFTER THAT! I LEARNED THAT IF ALERT AD IMAGE ARE NOT IN THE setTimeout TOGETHER, IT DOES THEM AT THE SAME TIME. */
-			setTimeout(beardedBoo, 6000)
-			setTimeout(function() {
-				alert("Perhaps you are not aware of the many benefits")
-				image.addClass("benefits")
-			}, 200)
-/* HEY!!! */
-		} else {
-			body.addClass("no")
-			setTimeout(function() {
-				alert("Say it isn't so. Please try again.")
-				beardedBoo()
-			}, 200)
-		}
-	}
-    setTimeout(beardedBoo, 300)
-/* ALL THESE ALERTS/PROMPTS COULD GET ANNOYING, IT'S BEST TO JUST BE MY VALENTINE */
-	</script>
+    <div class="container">
+        <!-- Halaman Pembuka -->
+        <section id="intro" class="section visible">
+            <div class="illustration"></div>
+            <h1>Hai, [Reva ku tercintaa]...</h1>
+            <p>Ada sesuatu yang ingin aku berikan hari ini. Bukan bunga atau cokelat biasa, tapi sebuah ruang kecil penuh kenangan kita. Klik tombol di bawah untuk memulai petualangan ini, dan siapa tahu, ada kejutan yang menunggu di akhir.</p>
+            <button class="button" onclick="nextSection('story')">Mulai Membuka Hadiah</button>
+        </section>
 
-<div id="image"></div>
- 
+        <!-- Section Cerita Perjalanan Cinta -->
+        <section id="story" class="section">
+            <h2>Perjalanan Kita dari Awal</h2>
+            <p>Ingat pertama kali kita ketemu? yang hanya berawal dari saling follow akun instagram, aku yang gugup banget dan canggung gimana harus memulai. Dari obrolan random di ig itu, kita jadi deket, lalu lebih. Dan kita sering bertemu di kost an bersenda gurau mesra. Lalu harus menerima jarak di antara kita karna masa pkl kita sudah selesai.  Sekarang, setelah hampir [4 bulan] bulan, kamu masih yang bikin hari-hariku lebih cerah. Lucu ya, dulu aku takut bilang 'I love you', sekarang aku bilangnya tiap hari lewat hal kecil.</p>
+            <div class="memory" onclick="alert('Kenangan: Saat kita pertama kali bertemu sangat sedikit percakapan yang aku mulai, karena sisanya kebanyakan ketawa sama grogi!')">Klik untuk kenangan lucu pertama</div>
+        </section>
+
+        <!-- Section Momen Bermakna -->
+        <section id="moments" class="section">
+            <h2>Momen-Momen Sederhana Kita</h2>
+            <p>Yang aku rindukan bukan liburan mewah, tapi pagi aku bangun aku mengawali hari-hariku dengan percakapan lucu sama kamu, atau malam-malam nonton film bersama di netflix sambil peluk. Kita sering mengobrol tentang hal yang sebenarnya engga penting sih tapi itu yang membuat kita selalu semakin hangat hehe. Kamu tau, saat kamu belikan aku vitamin dan buah buatku pas aku sakit, dan kamu merayakan hari ulang tahun aku yang sebenernya random banget kalau diinget karna pranknya berhasil buat aku mual hahaha, tapi disitulah aku merasakan pertamakalinya hari spesialku dirayakan oleh seseorang yang sama spesialnya buat aku—itu yang bikin aku merasa sangat jatuh cinta sama kamu. Atau waktu kita tiktok an di kamar dan dan dihalaman depan kostmu, meski aku jelek banget gerakannya karna kaku hehe.</p>
+            <div class="memory" onclick="alert('Kenangan: Waktu kita nonton bareng di laptop, tapi malah nge lag laptopnya hehe. waktu kita bikin tiktokan lucu dan aku langsung bisa gerakannya dengan bangga hehehe!')">Klik untuk kenangan lucu kedua</div>
+        </section>
+
+        <!-- Section Hal yang Disukai -->
+        <section id="likes" class="section">
+            <h2>Hal-Hal yang Aku Sukai dari Kamu</h2>
+            <p>Aku suka cara kamu bertingkah imut=imut kaya bayi, selalu bercerita hal yang kecil, atau diam-diam pegang tanganku di keramaian. Kamu selalu tau kapan aku butuh pelukan, tanpa aku bilang. Dan ya, aku suka banget rambutmu yang berantakan pagi-pagi—itu yang bikin kamu terlihat imut hehee.</p>
+            <div class="memory" onclick="alert('Nostalgia: Dulu kita sering video call sampe subuh bahkan sampai aku ditempat pkl dan selalu juga aku tidur bareng sama kamu sambil cudle hangat, dan sekarang kita tidur dari rimah kita masing-masing di malam harinya. Terima kasih yaa, walapun kita sekarang jarak jauh tapi disaat aku bersama kamu udah bikin hidupku lebih lengkap dan lebih berarti.')">Klik untuk pesan tulus</div>
+        </section>
+
+        <!-- Surprise Section (Tersembunyi, muncul setelah scroll atau tombol) -->
+        <section id="surprise" class="section hidden">
+            <div class="surprise">
+                <h2>Kejutan Terakhir</h2>
+                <p>Aku mau bilang, kamu adalah yang seseorang yang sangat aku cintai sedalam-dalamnya dan aku bersyukur bisa memiliki kamu dan menjadikanmu pacarku dan semoga kita akan terus bersama sampai akad kita nanti, Insyaallah aamiinn. Terima kasih udah sabar sama kekuranganku dan masih mau memaafkan semua kesalahan yang sampai membuatmu sangat terpuruk, aku janji akan membuatmu bahagia bersama aku, udah bikin aku jadi orang yang lebih baik. Ke depan, aku harap kita bisa terus seperti ini—jalan bareng, ketawa bareng, dan bikin lebih banyak kenangan. Aku cinta kamu lebih dari yang kamu tau sayang i really lucky to have you and being your boyfriend, lebih dari kata-kata bisa ungkapin. Happy Valentine yaa, sayangkuu cintakuu semestakuu pacarkuu lucukuu imutkuu gemeshkuu my honey bunny sweetiekuu tersayangg. 💕</p>
+                <div class="heart">❤️</div>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        let currentSection = 0;
+        const sections = document.querySelectorAll('.section');
+
+        function nextSection(id) {
+            sections.forEach(sec => sec.classList.remove('visible'));
+            document.getElementById(id).classList.add('visible');
+            currentSection++;
+        }
+
+        // Animasi muncul bertahap saat scroll
+        window.addEventListener('scroll', () => {
+            sections.forEach((sec, index) => {
+                const rect = sec.getBoundingClientRect();
+                if (rect.top < window.innerHeight - 100) {
+                    sec.classList.add('visible');
+                }
+            });
+        });
+
+        // Tombol rahasia: Klik logo hati di intro untuk langsung ke surprise
+        document.querySelector('.illustration').addEventListener('click', () => {
+            document.getElementById('surprise').classList.remove('hidden');
+            document.getElementById('surprise').classList.add('visible');
+            alert('Kejutan ditemukan! Scroll ke bawah ya.');
+        });
+    </script>
 </body>
 </html>
